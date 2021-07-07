@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Canvas, useFrame } from "react-three-fiber";
+import { useFrame } from "react-three-fiber";
 
 // must put box in own component if want to use useFrame
 function SpinningMesh({ position, size = [1, 1, 1], color = "pink" }) {
@@ -17,20 +17,6 @@ function SpinningMesh({ position, size = [1, 1, 1], color = "pink" }) {
   );
 }
 
-export default function Box() {
-  return (
-    <>
-      {/* fov = zoom */}
-      <Canvas camera={{ position: [-5, 2, 10], fov: 40 }}>
-        <ambientLight intensity={0.3} />
-        <SpinningMesh
-          position={[0, 1, 0]}
-          size={[3, 2, 1]}
-          color="lightgreen"
-        />
-        <SpinningMesh position={[-2, 1, -5]} />
-        <SpinningMesh position={[5, 1, -2]} />
-      </Canvas>
-    </>
-  );
+export default function Box({ position, size, color }) {
+  return <SpinningMesh position={position} size={size} color={color} />;
 }

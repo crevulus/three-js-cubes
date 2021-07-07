@@ -1,10 +1,10 @@
 import { StyledMainContent } from "./App.styles";
-import Box from "./components/Box";
+import MainCanvas from "./components/MainCanvas";
 
 function App() {
   return (
     <StyledMainContent className="App">
-      <Box />
+      <MainCanvas />
     </StyledMainContent>
   );
 }
